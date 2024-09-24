@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JAVA_HOME'     // This should match the JDK name in Jenkins (e.g., JAVA_HOME)
-        maven 'M2_HOME'     // This should match the Maven name in Jenkins (e.g., M2_HOME)
+        jdk 'JAVA_HOME'     // Use the correct JDK name from Jenkins
+        maven 'M2_HOME'     // Use the correct Maven name from Jenkins
     }
 
     stages {
-        stage('GIT') {
+        stage('Checkout') {
             steps {
-                git branch: 'main',
+                git branch: 'master',  // Explicitly use 'master' branch
                 url: 'https://github.com/seifzoghbii/Atelier_jenkins.git'
             }
         }
